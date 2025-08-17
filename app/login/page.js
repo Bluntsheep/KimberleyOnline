@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const LoginPage = () => {
@@ -11,6 +12,7 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [loginStatus, setLoginStatus] = useState("");
+  const router = useRouter();
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -18,6 +20,14 @@ const LoginPage = () => {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+  };
+
+  const handleRegister = () => {
+    if (loginType === "jobSeeker") {
+      router.push("/cvuploader");
+    } else {
+      router.push("/companyRegistration");
+    }
   };
 
   const handleLogin = async (e) => {
@@ -193,8 +203,10 @@ const LoginPage = () => {
               {/* Sign Up Link */}
               <div className="text-center">
                 <p className="text-slate-400">
-                  Don't have an account?{" "}
-                  <button className="text-[#08CB00] hover:text-[#06A800] font-semibold transition-colors duration-300">
+                  {"Don't have an account?"}
+                  <button
+                    onClick={handleRegister}
+                    className="text-[#08CB00] hover:text-[#06A800] font-semibold transition-colors duration-300">
                     {loginType === "jobSeeker"
                       ? "Create your CV"
                       : "Sign up as Employer"}

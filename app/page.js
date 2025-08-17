@@ -1,6 +1,13 @@
-import Navbar from "@/components/navbar/navbar";
+"use client";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleCVUploader = () => router.push("/cvuploader");
+
+  const handleEmployerSignup = () => router.push("/companyRegistration");
+
   return (
     <div className=" h-screen px-[10%] py-10 text-slate-300 cursor-default mt-10">
       <div className="text-center mb-14 px-48">
@@ -39,10 +46,14 @@ export default function Home() {
             </p>
           </div>
           <div className="flex gap-10 ml-8 items-center mt-6">
-            <button className="bg-[#00cbc4] text-black px-6 py-2 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
+            <button
+              onClick={handleCVUploader}
+              className="bg-[#00cbc4] text-black px-6 py-2 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
               Create CV
             </button>
-            <button className="bg-[#08CB00] text-black px-6 py-2 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
+            <button
+              onClick={handleEmployerSignup}
+              className="bg-[#08CB00] text-black px-6 py-2 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
               Employer sign up
             </button>
           </div>
