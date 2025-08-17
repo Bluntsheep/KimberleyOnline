@@ -16,7 +16,7 @@ const Navbar = () => {
     { name: "FAQ", link: "/faq" },
     { name: "Terms", link: "/termsandconditions" },
     { name: "Contact", link: "/contactus" },
-    { name: "Login", link: "#" },
+    { name: "Login", link: "/login" },
   ];
 
   const handleSelectTab = (index) => {
