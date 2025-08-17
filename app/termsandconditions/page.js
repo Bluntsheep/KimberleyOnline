@@ -89,10 +89,10 @@ const TermsConditionsPage = () => {
                 </h2>
                 <div className="prose prose-slate max-w-none">
                   <p className="text-slate-400 leading-relaxed mb-4">
-                    Welcome to Kimberley Online ("we," "our," or "us"). These
-                    Terms and Conditions ("Terms") govern your use of our
-                    website, mobile application, and services (collectively, the
-                    "Platform").
+                    {
+                      ' Welcome to Kimberley Online ("we," "our," or "us"). These Terms and Conditions ("Terms") govern your use of our website, mobile application, and services (collectively, the "Platform")'
+                    }
+                    .
                   </p>
                   <p className="text-slate-400 leading-relaxed mb-4">
                     By accessing or using our Platform, you agree to be bound by
@@ -117,28 +117,32 @@ const TermsConditionsPage = () => {
                 <div className="space-y-4">
                   <div className="bg-slate-800/30 rounded-lg p-4">
                     <p className="text-slate-400 leading-relaxed">
-                      <strong className="text-[#08CB00]">"Platform"</strong>{" "}
+                      <strong className="text-[#08CB00]">{'"Platform"'}</strong>{" "}
                       refers to the Kimberley Online website, mobile
                       applications, and all related services.
                     </p>
                   </div>
                   <div className="bg-slate-800/30 rounded-lg p-4">
                     <p className="text-slate-400 leading-relaxed">
-                      <strong className="text-[#08CB00]">"Users"</strong>{" "}
+                      <strong className="text-[#08CB00]">{'"Users"'}</strong>{" "}
                       includes both Job Seekers and Employers who create
                       accounts on our Platform.
                     </p>
                   </div>
                   <div className="bg-slate-800/30 rounded-lg p-4">
                     <p className="text-slate-400 leading-relaxed">
-                      <strong className="text-[#08CB00]">"Job Seekers"</strong>{" "}
+                      <strong className="text-[#08CB00]">
+                        {'"Job Seekers"'}
+                      </strong>{" "}
                       are individuals seeking employment opportunities through
                       our Platform.
                     </p>
                   </div>
                   <div className="bg-slate-800/30 rounded-lg p-4">
                     <p className="text-slate-400 leading-relaxed">
-                      <strong className="text-[#08CB00]">"Employers"</strong>{" "}
+                      <strong className="text-[#08CB00]">
+                        {'"Employers"'}
+                      </strong>{" "}
                       are businesses, organizations, or individuals posting job
                       opportunities on our Platform.
                     </p>
@@ -339,8 +343,9 @@ const TermsConditionsPage = () => {
                   until payment is made.
                 </p>
                 <p className="text-slate-400 leading-relaxed">
-                  We reserve the right to change our pricing with 30 days'
-                  notice to existing subscribers.
+                  {
+                    "We reserve the right to change our pricing with 30 days' notice to existing subscribers."
+                  }
                 </p>
               </section>
 
