@@ -111,7 +111,7 @@ const ContactPage = () => {
           GET IN <span className="text-[#08CB00]">TOUCH.</span>
         </p>
         <p className="mb-10 text-lg text-slate-400 font-light tracking-widest leading-normal">
-          We're here to help you succeed on Kimberley Online.
+          {"We're here to help you succeed on Kimberley Online."}
         </p>
       </div>
 
@@ -155,7 +155,7 @@ const ContactPage = () => {
                   Message sent successfully!
                 </p>
                 <p className="text-slate-400 text-sm">
-                  We'll get back to you within 2-4 hours.
+                  {"We'll get back to you within 2-4 hours."}
                 </p>
               </div>
             )}
