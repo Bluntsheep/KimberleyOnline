@@ -1,4 +1,5 @@
 "use client";
+import { contactData } from "@/data/pricing details/contacktData/contactData";
 import React, { useState } from "react";
 
 const ContactPage = () => {
@@ -50,7 +51,7 @@ const ContactPage = () => {
       icon: "📧",
       title: "Email Support",
       description: "Get help via email",
-      contact: "support@kimberleyonline.co.za",
+      contact: contactData.email,
       response: "Response within 2-4 hours",
       action: "Send Email",
     },
@@ -58,47 +59,47 @@ const ContactPage = () => {
       icon: "📞",
       title: "Phone Support",
       description: "Speak with our team",
-      contact: "+27 (0)53 123 4567",
+      contact: contactData.contactNumber,
       response: "Monday - Friday, 8AM - 5PM",
       action: "Call Now",
     },
-    {
-      icon: "💬",
-      title: "Live Chat",
-      description: "Chat with us instantly",
-      contact: "Available on website",
-      response: "Average response: 30 seconds",
-      action: "Start Chat",
-    },
-    {
-      icon: "🏢",
-      title: "Office Visit",
-      description: "Visit our Kimberley office",
-      contact: "123 Diamond Street, Kimberley",
-      response: "By appointment only",
-      action: "Get Directions",
-    },
+    // {
+    //   icon: "💬",
+    //   title: "Live Chat",
+    //   description: "Chat with us instantly",
+    //   contact: "Available on website",
+    //   response: "Average response: 30 seconds",
+    //   action: "Start Chat",
+    // },
+    // {
+    //   icon: "🏢",
+    //   title: "Office Visit",
+    //   description: "Visit our Kimberley office",
+    //   contact: "123 Diamond Street, Kimberley",
+    //   response: "By appointment only",
+    //   action: "Get Directions",
+    // },
   ];
 
   const departments = [
     {
       name: "General Support",
-      email: "support@kimberleyonline.co.za",
+      email: contactData.emailGeneralSupport,
       description: "Account help, technical issues, general questions",
     },
     {
       name: "Sales Team",
-      email: "sales@kimberleyonline.co.za",
+      email: contactData.emailSales,
       description: "Pricing, demos, enterprise solutions",
     },
     {
       name: "Technical Support",
-      email: "tech@kimberleyonline.co.za",
+      email: contactData.emailTechnical,
       description: "Platform bugs, integration issues, API support",
     },
     {
       name: "Legal & Compliance",
-      email: "legal@kimberleyonline.co.za",
+      email: contactData.emailLegal,
       description: "Terms, privacy, compliance matters",
     },
   ];
@@ -390,11 +391,15 @@ const ContactPage = () => {
       <div className="flex justify-center font-light tracking-wider text-center divide-x divide-slate-500">
         <div className="px-10">
           <p className="text-3xl text-[#08CB00]">&lt; 2hrs</p>
-          <p className="mt-2 text-sm text-slate-500">Average Email Response</p>
+          <p className="mt-2 text-sm text-slate-500">
+            Average Email Response Business Hours
+          </p>
         </div>
         <div className="px-10">
-          <p className="text-3xl text-[#08CB00]">&lt; 30sec</p>
-          <p className="mt-2 text-sm text-slate-500">Live Chat Response</p>
+          <p className="text-3xl text-[#08CB00]">&lt; 6hrs</p>
+          <p className="mt-2 text-sm text-slate-500">
+            Average Email Response After Hours
+          </p>
         </div>
         <div className="px-10">
           <p className="text-3xl text-[#08CB00]">24/7</p>

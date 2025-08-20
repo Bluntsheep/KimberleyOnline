@@ -1,68 +1,12 @@
 "use client";
+
+import { currentplans } from "@/data/pricing details/prigindetails";
 import React, { useState } from "react";
 
 const PricingPage = () => {
   const [billingCycle, setBillingCycle] = useState("monthly");
 
-  const plans = [
-    {
-      name: "Starter",
-      description: "Perfect for small businesses starting their hiring journey",
-      monthlyPrice: 299,
-      yearlyPrice: 2990,
-      features: [
-        "Up to 3 active job postings",
-        "Access to 300+ job seekers",
-        "Basic applicant filtering",
-        "Email support",
-        "Standard profile views",
-        "Basic analytics dashboard",
-      ],
-      popular: false,
-      buttonText: "Get Started",
-      buttonStyle: "bg-slate-700 hover:bg-slate-600 text-slate-300",
-    },
-    {
-      name: "Professional",
-      description: "For growing companies that need advanced hiring tools",
-      monthlyPrice: 599,
-      yearlyPrice: 5990,
-      features: [
-        "Up to 10 active job postings",
-        "Priority access to talent pool",
-        "Advanced search & filtering",
-        "Priority email & phone support",
-        "Enhanced profile insights",
-        "Advanced analytics & reporting",
-        "Custom branding on job posts",
-        "Applicant tracking system",
-      ],
-      popular: true,
-      buttonText: "Most Popular",
-      buttonStyle: "bg-[#08CB00] hover:bg-[#06A800] text-black",
-    },
-    {
-      name: "Enterprise",
-      description: "Comprehensive solution for large organizations",
-      monthlyPrice: 1199,
-      yearlyPrice: 11990,
-      features: [
-        "Unlimited job postings",
-        "Full talent database access",
-        "AI-powered candidate matching",
-        "Dedicated account manager",
-        "Custom integrations",
-        "White-label solutions",
-        "Advanced security features",
-        "Custom reporting & analytics",
-        "API access",
-        "24/7 premium support",
-      ],
-      popular: false,
-      buttonText: "Contact Sales",
-      buttonStyle: "bg-[#00cbc4] hover:bg-[#06A800] text-black",
-    },
-  ];
+  const plans = currentplans;
 
   const getPrice = (plan) => {
     return billingCycle === "monthly" ? plan.monthlyPrice : plan.yearlyPrice;
@@ -106,7 +50,7 @@ const PricingPage = () => {
               }`}>
               Yearly
               <span className="ml-2 text-xs bg-[#00cbc4] text-black px-2 py-1 rounded-full">
-                Save 17%
+                Save 20%
               </span>
             </button>
           </div>

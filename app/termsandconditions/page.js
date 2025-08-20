@@ -1,4 +1,5 @@
 "use client";
+import { contactData } from "@/data/pricing details/contacktData/contactData";
 import React, { useState } from "react";
 
 const TermsConditionsPage = () => {
@@ -434,10 +435,10 @@ const TermsConditionsPage = () => {
                 <div className="bg-slate-800/50 border border-slate-600 rounded-lg p-6">
                   <p className="text-slate-400 leading-relaxed">
                     <strong className="text-[#08CB00]">Email:</strong>{" "}
-                    legal@kimberleyonline.co.za
+                    {contactData.email}
                     <br />
-                    <strong className="text-[#08CB00]">Phone:</strong> +27 (0)53
-                    123 4567
+                    <strong className="text-[#08CB00]">Phone:</strong>{" "}
+                    {contactData.contactNumber}
                     <br />
                     <strong className="text-[#08CB00]">Address:</strong> 123
                     Diamond Street, Kimberley, 8301, Northern Cape, South Africa
