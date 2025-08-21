@@ -1,12 +1,14 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useFormStatus } from "react-dom";
 import React, { useState } from "react";
 
 const LoginPage = () => {
-  const [loginType, setLoginType] = useState("jobSeeker");
+  const [loginType, setLoginType] = useState("JobSeeker");
   const [formData, setFormData] = useState({
-    email: "",
+    loginInfo: "",
     password: "",
+    role: loginType,
     rememberMe: false,
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -23,8 +25,8 @@ const LoginPage = () => {
   };
 
   const handleRegister = () => {
-    if (loginType === "jobSeeker") {
-      router.push("/cvuploader");
+    if (loginType === "JobSeeker") {
+      router.push("/jobseekerRegistration");
     } else {
       router.push("/companyRegistration");
     }
@@ -73,18 +75,18 @@ const LoginPage = () => {
             <div className="mb-8">
               <div className="bg-slate-800 rounded-full p-1 flex">
                 <button
-                  onClick={() => setLoginType("jobSeeker")}
+                  onClick={() => setLoginType("JobSeeker")}
                   className={`flex-1 py-3 px-6 rounded-full transition-all duration-300 text-sm font-semibold ${
-                    loginType === "jobSeeker"
+                    loginType === "JobSeeker"
                       ? "bg-[#08CB00] text-black"
                       : "text-slate-400 hover:text-slate-300"
                   }`}>
                   Job Seeker
                 </button>
                 <button
-                  onClick={() => setLoginType("employer")}
+                  onClick={() => setLoginType("Employer")}
                   className={`flex-1 py-3 px-6 rounded-full transition-all duration-300 text-sm font-semibold ${
-                    loginType === "employer"
+                    loginType === "Employer"
                       ? "bg-[#08CB00] text-black"
                       : "text-slate-400 hover:text-slate-300"
                   }`}>
@@ -106,16 +108,16 @@ const LoginPage = () => {
             <div className="space-y-6">
               <div>
                 <label className="block text-sm text-[#08CB00] mb-2 tracking-wider">
-                  EMAIL ADDRESS
+                  EMAIL ADDRESS OR PHONE NUMBER
                 </label>
                 <input
                   type="email"
-                  name="email"
-                  value={formData.email}
+                  name="loginInfo"
+                  value={formData.loginInfo}
                   onChange={handleInputChange}
                   required
                   className="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-slate-300 placeholder-slate-500 focus:outline-none focus:border-[#08CB00] transition-colors duration-300"
-                  placeholder="Enter your email address"
+                  placeholder="Enter your email address or phone number"
                 />
               </div>
 
@@ -185,7 +187,7 @@ const LoginPage = () => {
               </div>
 
               {/* Social Login */}
-              <div className="grid grid-cols-2 gap-4">
+              {/* <div className="grid grid-cols-2 gap-4">
                 <button
                   onClick={() => handleSocialLogin("google")}
                   className="flex items-center justify-center px-4 py-3 border border-slate-600 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-300">
@@ -198,7 +200,7 @@ const LoginPage = () => {
                   <span className="mr-2">💼</span>
                   <span className="text-sm text-slate-300">LinkedIn</span>
                 </button>
-              </div>
+              </div> */}
 
               {/* Sign Up Link */}
               <div className="text-center">
@@ -207,7 +209,7 @@ const LoginPage = () => {
                   <button
                     onClick={handleRegister}
                     className="text-[#08CB00] hover:text-[#06A800] font-semibold transition-colors duration-300">
-                    {loginType === "jobSeeker"
+                    {loginType === "JobSeeker"
                       ? " Create your CV"
                       : " Sign up as Employer"}
                   </button>
@@ -235,7 +237,7 @@ const LoginPage = () => {
 
             {/* Features */}
             <div className="space-y-6">
-              {loginType === "jobSeeker" ? (
+              {loginType === "JobSeeker" ? (
                 <>
                   <div className="flex flex-col tracking-wider space-y-3 border-l border-slate-600 px-6 py-4">
                     <p className="text-sm text-[#08CB00] tracking-wider">

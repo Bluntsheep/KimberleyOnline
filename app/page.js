@@ -5,7 +5,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleCVUploader = () => router.push("/cvuploader");
-  const handleEmployerSignup = () => router.push("/companyRegistration");
+  const handleEmployerSignup = () => router.push("/login");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-300">
@@ -85,17 +85,17 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <button
+              {/* <button
                 onClick={handleCVUploader}
                 className="group relative overflow-hidden bg-gradient-to-r from-[#00cbc4] to-[#00a8a3] text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-out">
                 <span className="relative z-10">Create Professional CV</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#00a8a3] to-[#008a87] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </button>
+              </button> */}
 
               <button
                 onClick={handleEmployerSignup}
                 className="group relative overflow-hidden bg-gradient-to-r from-[#08CB00] to-[#06A800] text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-out">
-                <span className="relative z-10">Employer Registration</span>
+                <span className="relative z-10">Get Started</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#06A800] to-[#048600] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
             </div>
