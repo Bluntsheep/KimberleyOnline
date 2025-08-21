@@ -1,8 +1,12 @@
 "use client";
 import { contactData } from "@/data/pricing details/contacktData/contactData";
+import { FormatePhoneNumber } from "@/functions/formatPhoneNumber/formatePhoneNumber";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const ContactPage = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,6 +27,10 @@ const ContactPage = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleNavigateFAQ = () => {
+    router.push("/faq");
   };
 
   const handleSubmit = async (e) => {
@@ -59,7 +67,7 @@ const ContactPage = () => {
       icon: "📞",
       title: "Phone Support",
       description: "Speak with our team",
-      contact: contactData.contactNumber,
+      contact: FormatePhoneNumber(contactData.contactNumber),
       response: "Monday - Friday, 8AM - 5PM",
       action: "Call Now",
     },
@@ -381,7 +389,9 @@ const ContactPage = () => {
           <p className="text-slate-400 mb-6 tracking-wide">
             Check our FAQ section for instant answers to common questions.
           </p>
-          <button className="bg-[#00cbc4] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
+          <button
+            onClick={handleNavigateFAQ}
+            className="bg-[#00cbc4] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
             Browse FAQ
           </button>
         </div>

@@ -203,13 +203,13 @@ const LoginPage = () => {
               {/* Sign Up Link */}
               <div className="text-center">
                 <p className="text-slate-400">
-                  {"Don't have an account?"}
+                  {"Don't have an account? "}
                   <button
                     onClick={handleRegister}
                     className="text-[#08CB00] hover:text-[#06A800] font-semibold transition-colors duration-300">
                     {loginType === "jobSeeker"
-                      ? "Create your CV"
-                      : "Sign up as Employer"}
+                      ? " Create your CV"
+                      : " Sign up as Employer"}
                   </button>
                 </p>
               </div>

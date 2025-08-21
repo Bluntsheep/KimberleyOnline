@@ -1,9 +1,15 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const FAQPage = () => {
   const [openItems, setOpenItems] = useState({});
+  const router = useRouter();
+
+  const handleNavigateContactUs = () => {
+    router.push("/contactus");
+  };
 
   const toggleItem = (index) => {
     setOpenItems((prev) => ({
@@ -170,7 +176,7 @@ const FAQPage = () => {
 
       {/* Search Bar */}
       <div className="mb-12 flex justify-center">
-        <div className="relative w-full max-w-2xl">
+        {/* <div className="relative w-full max-w-2xl">
           <input
             type="text"
             placeholder="Search for answers..."
@@ -190,7 +196,7 @@ const FAQPage = () => {
               />
             </svg>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* FAQ Categories */}
@@ -265,7 +271,9 @@ const FAQPage = () => {
             Our support team is here to help you succeed on Kimberley Online.
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
-            <button className="bg-[#08CB00] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
+            <button
+              onClick={handleNavigateContactUs}
+              className="bg-[#08CB00] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">
               Contact Support
             </button>
             <button className="bg-[#00cbc4] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#06A800] transition-colors duration-300">

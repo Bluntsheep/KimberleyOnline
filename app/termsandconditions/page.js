@@ -1,5 +1,6 @@
 "use client";
 import { contactData } from "@/data/pricing details/contacktData/contactData";
+import { FormatePhoneNumber } from "@/functions/formatPhoneNumber/formatePhoneNumber";
 import React, { useState } from "react";
 
 const TermsConditionsPage = () => {
@@ -438,7 +439,7 @@ const TermsConditionsPage = () => {
                     {contactData.email}
                     <br />
                     <strong className="text-[#08CB00]">Phone:</strong>{" "}
-                    {contactData.contactNumber}
+                    {FormatePhoneNumber(contactData.contactNumber)}
                     <br />
                     <strong className="text-[#08CB00]">Address:</strong> 123
                     Diamond Street, Kimberley, 8301, Northern Cape, South Africa
