@@ -28,7 +28,7 @@ const LoginPage = () => {
     if (loginType === "JobSeeker") {
       router.push("/jobseekerRegistration");
     } else {
-      router.push("/companyRegistration");
+      router.push("/newCompanyRegistration");
     }
   };
 
