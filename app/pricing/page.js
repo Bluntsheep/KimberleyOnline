@@ -25,8 +25,11 @@ const PricingPage = () => {
         <p className="text-4xl md:text-5xl text-slate-400 font-light tracking-widest leading-normal mb-6">
           SIMPLE, TRANSPARENT <span className="text-[#08CB00]">PRICING.</span>
         </p>
-        <p className="mb-10 text-lg text-slate-400 font-light tracking-widest leading-normal">
+        <p className="mb-2 text-lg text-slate-400 font-light tracking-widest leading-normal">
           Choose the perfect plan for your hiring needs.
+        </p>
+        <p className="mb-10 text-lg font-light tracking-widest leading-normal text-[#08CB00]">
+          Free accounts have limited cv categories to view.
         </p>
 
         {/* Billing Toggle */}

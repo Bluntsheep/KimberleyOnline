@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useFormStatus } from "react-dom";
 import { Mail, Phone, Lock, Eye, EyeOff, Building2, User } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { registerCompany } from "@/lib/registerCompany/registerCompany";
 
 export default function CompanyRegisterPage() {
   const router = useRouter();
@@ -41,7 +42,7 @@ export default function CompanyRegisterPage() {
         </div>
 
         <div className="bg-slate-800/50 border border-slate-600 rounded-3xl p-8">
-          <form>
+          <form action={registerCompany}>
             <div className="space-y-6">
               {/* Company Name */}
               <div>
